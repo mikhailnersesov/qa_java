@@ -3,8 +3,6 @@
 > Author: Mikhail Nersesov
 >
 > GitHub link: https://github.com/mikhailnersesov/qa_java
->
-> Service under test: https://qa-scooter.praktikum-services.ru/
 
 ## ✨ Technologies in the project
 
@@ -13,6 +11,10 @@
 > JUnit: 4.13.2
 >
 > Maven: 3.9.2
+> 
+> Mockito: 3.8.0
+> 
+> Jacoco plugin: 0.8.7
 
 ## 🚀 Usage
 
