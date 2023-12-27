@@ -70,17 +70,9 @@ public class LionTest{
         List<String> actualFood = lion.getFood();
         assertEquals(expectedFood, actualFood);
     }
-//    @Test
-//    public void testGetFoodThirdGender() throws Exception {
-//        // в тестируемый класс передаем мокнутый объект зависимости
-//        Lion lion = new Lion("Третий пол",feline,animal);
-//        // указываю что ожидаю получить
-//        List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
-//        // мокаю внутреннюю зависимость метода, чтобы не зависить от нее и просто подставить через стоб значение
-//        when(animal.getFood("Хищник")).thenReturn(expectedFood);
-//        // вызываю сам метод и говорю что это получаемое значение
-//        List<String> actualFood = lion.getFood();
-//        // сравниваю оба значения
-//        assertEquals(expectedFood, actualFood);
-//    }
+    @Test(expected=Exception.class)
+    public void testGetFoodThirdGender() throws Exception {
+        Lion lion = new Lion("Третий пол",feline,animal);
+    }
+
 }

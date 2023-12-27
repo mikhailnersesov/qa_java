@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
 public class AnimalTest{
 
@@ -26,6 +25,13 @@ public class AnimalTest{
         List<String> actualFood = animal.getFood("Хищник");
         assertEquals(expectedFood, actualFood);
     }
+    @Test(expected=Exception.class)
+    public void testGetFoodThirdGender() throws Exception {
+        //TODO: need Mock and DI + Parameters
+        Animal animal = new Animal();
+        animal.getFood("Третий пол");
+    }
+
 
     @Test
     public void testGetFamily() {
