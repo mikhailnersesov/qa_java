@@ -23,5 +23,16 @@ To run the tests:
 ```sh
 mvn clean test
 ```
+To clean the target folder:
+```sh
+mvn clean
+```
+
+To get a coverage report:
+```sh
+mvn verify
+```
+
+
 
 

@@ -2,14 +2,20 @@ package com.example;
 
 import java.util.List;
 
-public class Feline extends Animal implements Predator, FeelineInterface{
+public class Feline implements Predator, FeelineInterface{
+    private Animal animal;
+
+    public Feline(Animal animal) {
+        this.animal = animal;
+    }
+
 
     @Override
     public List<String> eatMeat() throws Exception {
-        return getFood("Хищник");
+        return animal.getFood("Хищник");
     }
 
-    @Override
+
     public String getFamily() {
         return "Кошачьи";
     }
