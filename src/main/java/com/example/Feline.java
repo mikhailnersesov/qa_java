@@ -2,11 +2,14 @@ package com.example;
 
 import java.util.List;
 
-public class Feline implements Predator, FeelineInterface{
+public class Feline implements Predator{
     private Animal animal;
 
     public Feline(Animal animal) {
         this.animal = animal;
+    }
+
+    public Feline() {
     }
 
 
@@ -20,7 +23,7 @@ public class Feline implements Predator, FeelineInterface{
         return "Кошачьи";
     }
 
-    @Override
+
     public int getKittens() {
         return getKittens(1);
     }

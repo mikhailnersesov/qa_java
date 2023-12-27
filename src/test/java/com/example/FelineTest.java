@@ -33,7 +33,7 @@ public class FelineTest{
     @Test
     public void testGetFamily() {
         String expectedFamilyName = "Кошачьи";
-        Feline feline = new Feline(animal);
+        Feline feline = new Feline();
         String actualFamilyName = feline.getFamily();
         assertEquals(expectedFamilyName, actualFamilyName);
     }
@@ -41,22 +41,16 @@ public class FelineTest{
     @Test
     public void testGetKittens() {
         int expectedFamilyName = 1;
-        Feline feline = new Feline(animal);
+        Feline feline = new Feline();
         int actualFamilyName = feline.getKittens(1);
         assertEquals(expectedFamilyName, actualFamilyName);
     }
 
     @Test
     public void testTestGetKittens() {
-//        Feline feline = new Feline(animal);
-//        // указываю что ожидаю получить
-//        Integer expectedFood = 1;
-//        // мокаю внутреннюю зависимость метода, чтобы не зависить от нее и просто подставить через стоб значение
-//        when(feline.getKittens(1)).thenReturn(expectedFood);
-//        // вызываю сам метод и говорю что это получаемое значение
-//        Integer actualFood = feline.getKittens(1);
-//        // сравниваю оба значения
-//        assertEquals(expectedFood, actualFood);
-
+        int expectedFood = 1;
+        Feline feline = new Feline();
+        int actualFood = feline.getKittens();
+        assertEquals(expectedFood, actualFood);
     }
 }

@@ -22,6 +22,7 @@ public class Lion {
         this.animal = animal;
     }
 
+
     public int getKittens() {
         return feline.getKittens();
     }
