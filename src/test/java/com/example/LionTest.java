@@ -24,29 +24,29 @@ public class LionTest {
     @Test
     public void testGetKittens() {
         Lion lion = new Lion(feline, animal);
-        int expectedFood = 3;
-        when(feline.getKittens()).thenReturn(expectedFood);
-        int actualFood = lion.getKittens();
-        assertEquals(expectedFood, actualFood);
+        int expectedKittensNumber = 3;
+        when(feline.getKittens()).thenReturn(expectedKittensNumber);
+        int actualKittensNumber = lion.getKittens();
+        assertEquals(expectedKittensNumber, actualKittensNumber);
     }
 
 
     @Test
     public void testGetFoodMale() throws Exception {
         Lion lion = new Lion("Самец", feline, animal);
-        List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
-        when(animal.getFood("Хищник")).thenReturn(expectedFood);
-        List<String> actualFood = lion.getFood();
-        assertEquals(expectedFood, actualFood);
+        List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
+        when(animal.getFood("Хищник")).thenReturn(expectedFoodList);
+        List<String> actualFoodList = lion.getFood();
+        assertEquals(expectedFoodList, actualFoodList);
     }
 
     @Test
     public void testGetFoodFemale() throws Exception {
         Lion lion = new Lion("Самка", feline, animal);
-        List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
-        when(animal.getFood("Хищник")).thenReturn(expectedFood);
-        List<String> actualFood = lion.getFood();
-        assertEquals(expectedFood, actualFood);
+        List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
+        when(animal.getFood("Хищник")).thenReturn(expectedFoodList);
+        List<String> actualFoodList = lion.getFood();
+        assertEquals(expectedFoodList, actualFoodList);
     }
 
     @Test(expected = Exception.class)

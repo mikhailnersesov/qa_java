@@ -2,7 +2,7 @@ package com.example;
 
 import java.util.List;
 
-public class Feline implements Predator{
+public class Feline implements Predator {
     private Animal animal;
 
     public Feline(Animal animal) {

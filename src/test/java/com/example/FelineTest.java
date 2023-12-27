@@ -2,32 +2,24 @@ package com.example;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class FelineTest{
-    @Mock
-    Animal animal;
-    @Mock
-    Feline feline;
+public class FelineTest {
+    @Spy
+    private Animal animal;
 
     @Test
     public void shouldFelineEatMeatThenGetFoodPositive() throws Exception {
-        //TODO: no mocks, max spy
         Feline feline = new Feline(animal);
-        List<String> expectedEatMeatName = Arrays.asList("Животные", "Птицы", "Рыба");
-        //TODO: parameterized for Травоядное
-        when(animal.getFood("Хищник")).thenReturn(expectedEatMeatName);
-        List<String>  actualEatMeatName =  feline.eatMeat();
-        assertEquals(expectedEatMeatName, actualEatMeatName);
+        List<String> expectedFoodList = animal.getFood("Хищник");
+        List<String> actualFoodList = feline.eatMeat();
+        assertEquals(expectedFoodList, actualFoodList);
     }
 
     @Test
@@ -40,17 +32,17 @@ public class FelineTest{
 
     @Test
     public void testGetKittens() {
-        int expectedFamilyName = 1;
+        int expectedKittensNumber = 1;
         Feline feline = new Feline();
-        int actualFamilyName = feline.getKittens(1);
-        assertEquals(expectedFamilyName, actualFamilyName);
+        int actualKittensNumber = feline.getKittens(1);
+        assertEquals(expectedKittensNumber, actualKittensNumber);
     }
 
     @Test
     public void testTestGetKittens() {
-        int expectedFood = 1;
+        int expectedKittensNumber = 1;
         Feline feline = new Feline();
-        int actualFood = feline.getKittens();
-        assertEquals(expectedFood, actualFood);
+        int actualKittensNumber = feline.getKittens();
+        assertEquals(expectedKittensNumber, actualKittensNumber);
     }
 }

@@ -13,8 +13,7 @@ public class Animal {
             return List.of("Трава", "Различные растения");
         } else if ("Хищник".equals(animalKind)) {
             return List.of("Животные", "Птицы", "Рыба");
-        }
-        else {
+        } else {
             throw new Exception("Неизвестный вид животного, используйте значение Травоядное или Хищник");
         }
     }

@@ -3,13 +3,8 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.mockito.Mock;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
 @RunWith(Parameterized.class)
 public class LionParamsTest {
@@ -28,11 +23,11 @@ public class LionParamsTest {
     }
 
     @Test
-    public void testDoesHaveMane()  throws Exception {
-        boolean expectedFood = isMane;
+    public void testDoesHaveMane() throws Exception {
+        boolean expectedManeStatus = isMane;
         Lion lion = new Lion(sex);
-        boolean actualFood = lion.doesHaveMane();
-        assertEquals(expectedFood, actualFood);
+        boolean actualManeStatus = lion.doesHaveMane();
+        assertEquals(expectedManeStatus, actualManeStatus);
     }
 
 

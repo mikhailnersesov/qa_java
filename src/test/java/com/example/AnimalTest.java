@@ -1,20 +1,14 @@
 package com.example;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 
-public class AnimalTest{
+public class AnimalTest {
 
-    @Test(expected=Exception.class)
+    @Test(expected = Exception.class)
     public void testGetFoodThirdGender() throws Exception {
-        //TODO: need Mock and DI + Parameters
         Animal animal = new Animal();
         animal.getFood("Неизвестный вид");
     }
@@ -22,8 +16,8 @@ public class AnimalTest{
     @Test
     public void testGetFamily() {
         Animal animal = new Animal();
-        String actualName = animal.getFamily();
-        String expectedName = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
-        assertEquals(expectedName, actualName);
+        String actualFamilyName = animal.getFamily();
+        String expectedFamilyName = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
+        assertEquals(expectedFamilyName, actualFamilyName);
     }
 }

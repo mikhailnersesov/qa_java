@@ -11,9 +11,9 @@
 > JUnit: 4.13.2
 >
 > Maven: 3.9.2
-> 
+>
 > Mockito: 3.8.0
-> 
+>
 > Jacoco plugin: 0.8.7
 
 ## 🚀 Usage
@@ -23,12 +23,15 @@ To run the tests:
 ```sh
 mvn clean test
 ```
+
 To clean the target folder:
+
 ```sh
 mvn clean
 ```
 
 To get a coverage report:
+
 ```sh
 mvn verify
 ```
