@@ -3,6 +3,7 @@ package com.example;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -15,44 +16,24 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest{
+
+
     @Mock
-    Animal animal;
+     Animal animal;
     @Mock
     Feline feline;
 
 
 
     @Test
-    public void testGetKittensMale() throws Exception {
-        Lion lion = new Lion("Самец",feline,animal);
+    public void testGetKittens() {
+        Lion lion = new Lion(feline,animal);
         int expectedFood = 3;
         when(feline.getKittens()).thenReturn(expectedFood);
         int actualFood = lion.getKittens();
         assertEquals(expectedFood, actualFood);
     }
-    @Test
-    public void testGetKittensFemale() throws Exception {
-        Lion lion = new Lion("Самка",feline,animal);
-        int expectedFood = 5;
-        when(feline.getKittens()).thenReturn(expectedFood);
-        int actualFood = lion.getKittens();
-        assertEquals(expectedFood, actualFood);
-    }
 
-    @Test
-    public void testDoesHaveManeMalePositive()  throws Exception {
-        boolean expectedFood = true;
-        Lion lion = new Lion("Самец",feline,animal);
-        boolean actualFood = lion.doesHaveMane();
-        assertEquals(expectedFood, actualFood);
-    }
-    @Test
-    public void testDoesHaveManeFemaleNegative()  throws Exception {
-        boolean expectedFood = false;
-        Lion lion = new Lion("Самка",feline,animal);
-        boolean actualFood = lion.doesHaveMane();
-        assertEquals(expectedFood, actualFood);
-    }
 
     @Test
     public void testGetFoodMale() throws Exception {
@@ -73,6 +54,10 @@ public class LionTest{
     @Test(expected=Exception.class)
     public void testGetFoodThirdGender() throws Exception {
         Lion lion = new Lion("Третий пол",feline,animal);
+    }
+    @Test(expected=Exception.class)
+    public void testGetFoodThirdGender2() throws Exception {
+        Lion lion = new Lion("Третий пол");
     }
 
 }
