@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Cat {
 
-    private Predator predator;
     private Feline feline;
 
     public Cat(Feline feline) {

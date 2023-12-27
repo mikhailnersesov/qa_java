@@ -21,14 +21,13 @@ public class CatTest{
 
     @Mock
     Feline feline;
-    @Mock
-    Animal animal;
 
     @Test
     public void testGetSound() {
         Cat cat = new Cat(feline);
         String actualSoundName = cat.getSound();
-        assertEquals("Мяу", actualSoundName);
+        String expectedSoundName = "Мяу";
+        assertEquals(expectedSoundName, actualSoundName);
     }
 
     @Test
