@@ -12,17 +12,20 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
+
+
     @Mock
     private Animal animal;
 
     @Test
     public void eatFoodPredatorFoodListShowsOk() throws Exception {
-        Feline feline = new Feline(animal);
+        Feline feline = new Feline();
         List<String> expectedFoodList = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(animal.getFood("Хищник")).thenReturn(expectedFoodList);
         List<String> actualFoodList = feline.eatMeat();
         assertEquals(expectedFoodList, actualFoodList);
     }
+
 
     @Test
     public void testGetFamily() {
