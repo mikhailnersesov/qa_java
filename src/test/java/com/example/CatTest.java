@@ -19,7 +19,7 @@ public class CatTest {
     Feline feline;
 
     @Test
-    public void testGetSound() {
+    public void getSoundCatSoundShowsOk() {
         Cat cat = new Cat();
         String actualSoundName = cat.getSound();
         String expectedSoundName = "Мяу";
@@ -27,7 +27,7 @@ public class CatTest {
     }
 
     @Test
-    public void testGetFood() throws Exception {
+    public void getFoodPredatorFoodListShowsOk() throws Exception {
         Cat cat = new Cat(feline);
         List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
         when(feline.eatMeat()).thenReturn(expectedFoodList);
