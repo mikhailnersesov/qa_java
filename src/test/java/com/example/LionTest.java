@@ -22,8 +22,8 @@ public class LionTest {
 
 
     @Test
-    public void testGetKittens() {
-        Lion lion = new Lion(feline, animal);
+    public void getKittensForMaleWithThreeChildrenShowsOk() throws Exception {
+        Lion lion = new Lion("Самец", feline);
         int expectedKittensNumber = 3;
         when(feline.getKittens()).thenReturn(expectedKittensNumber);
         int actualKittensNumber = lion.getKittens();
@@ -32,8 +32,8 @@ public class LionTest {
 
 
     @Test
-    public void testGetFoodMale() throws Exception {
-        Lion lion = new Lion("Самец", feline, animal);
+    public void getFoodForMaleWithListOfFoodShowsOk() throws Exception {
+        Lion lion = new Lion("Самец", feline);
         List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
         when(animal.getFood("Хищник")).thenReturn(expectedFoodList);
         List<String> actualFoodList = lion.getFood();
@@ -41,8 +41,8 @@ public class LionTest {
     }
 
     @Test
-    public void testGetFoodFemale() throws Exception {
-        Lion lion = new Lion("Самка", feline, animal);
+    public void getFoodForFemaleWithListOfFoodShowsOk() throws Exception {
+        Lion lion = new Lion("Самка", feline);
         List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
         when(animal.getFood("Хищник")).thenReturn(expectedFoodList);
         List<String> actualFoodList = lion.getFood();
@@ -50,13 +50,8 @@ public class LionTest {
     }
 
     @Test(expected = Exception.class)
-    public void testGetFoodThirdGender() throws Exception {
-        Lion lion = new Lion("Третий пол", feline, animal);
-    }
-
-    @Test(expected = Exception.class)
-    public void testGetFoodThirdGender2() throws Exception {
-        Lion lion = new Lion("Третий пол");
+    public void shouldLionWithInvalidSexThrowExeption() throws Exception {
+        Lion lion = new Lion("Третий пол", feline);
     }
 
 }
