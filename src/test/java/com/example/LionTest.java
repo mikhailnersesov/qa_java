@@ -13,10 +13,6 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
-
-
-    @Mock
-    Animal animal;
     @Mock
     Feline feline;
 
@@ -35,7 +31,7 @@ public class LionTest {
     public void getFoodForMaleWithListOfFoodShowsOk() throws Exception {
         Lion lion = new Lion("Самец", feline);
         List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
-        when(animal.getFood("Хищник")).thenReturn(expectedFoodList);
+        when(feline.getFood("Хищник")).thenReturn(expectedFoodList);
         List<String> actualFoodList = lion.getFood();
         assertEquals(expectedFoodList, actualFoodList);
     }
@@ -44,7 +40,7 @@ public class LionTest {
     public void getFoodForFemaleWithListOfFoodShowsOk() throws Exception {
         Lion lion = new Lion("Самка", feline);
         List<String> expectedFoodList = Arrays.asList("Животные", "Птицы", "Рыба");
-        when(animal.getFood("Хищник")).thenReturn(expectedFoodList);
+        when(feline.getFood("Хищник")).thenReturn(expectedFoodList);
         List<String> actualFoodList = lion.getFood();
         assertEquals(expectedFoodList, actualFoodList);
     }
