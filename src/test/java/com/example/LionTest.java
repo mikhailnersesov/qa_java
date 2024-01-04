@@ -1,6 +1,8 @@
 package com.example;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -47,6 +49,15 @@ public class LionTest {
 
     @Test(expected = Exception.class)
     public void shouldLionWithInvalidSexThrowExeption() throws Exception {
+        Lion lion = new Lion("Третий пол", feline);
+    }
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+    @Test
+    public void shouldLionWithInvalidSexThrowSpecificExeptionMessage() throws Exception {
+        thrown.expect(Exception.class);
+        thrown.expectMessage("Используйте допустимые значения пола животного - самей или самка");
         Lion lion = new Lion("Третий пол", feline);
     }
 
